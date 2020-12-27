@@ -1,0 +1,135 @@
+<!doctype html><html lang="en"><head> 
+  <meta charset="UTF-8"> 
+  <meta name="description" content="Deskripsi"> 
+  <meta name="keywords" content="Yadi"> 
+  <meta name="author" content="Yadi"> 
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+  <title>Yadi</title> 
+  <link rel="shortcut icon" href="" type="image/x-icon"> 
+ <style type="text/css" id="dcoder_stylesheet">body {
+  margin: 0;
+  padding: 0;
+  background-color: rgb(102,179,255);
+}
+
+.baling {
+  width: 200px;
+  height: 200px;
+  border-radius: 100px;
+  background-color: rgb(255,88,88);
+  margin: auto;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 25vw;
+  z-index: 1;
+}
+
+.baling:after {
+  content: "";
+  width: 200px;
+  height: 30px;
+  background-color: rgb(76,78,255);
+  margin: auto;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+}
+
+.baling:before {
+  content: "";
+  width: 30px;
+  height: 200px;
+  background-color: rgb(76,78,255);
+  margin: auto;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+}
+
+.batang {
+  width: 40px;
+  height: 200px;
+  margin: auto;
+  background-color: rgb(17,20,39);
+  border-radius: 10px;
+  position: absolute;
+  top:0;left:0;bottom:0;right:0;
+  z-index: -1;
+  box-shadow: 5px 3px 3px #333;
+}
+
+
+.batang:after {
+  content: "";
+  width: 200px;
+  height: 40px;
+  margin: auto;
+  background-color: rgb(62,70,255);
+  border-radius: 30px;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  position: absolute;
+  left: -80px;bottom:0;right:0;
+  box-shadow: 5px 3px 3px #333;
+}
+
+.button {
+  width: 80vw;
+  height: 10vw;
+  margin: 15px auto;
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  outline: 0;
+  box-shadow: 0px 0px 4px #333;
+  background-color: rgb(81,255,69);
+  border-radius: 10px;
+}
+
+.active {
+  background-color: rgb(255,69,69);
+  box-shadow: inset 0px 0px 4px #333;
+}
+
+.putar {
+  animation: yadi .2s linear 0s infinite;
+}
+
+@keyframes yadi {
+  0% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@media (min-width: 600px) {
+  .baling {
+    top: 50vw;
+  }
+  .batang {
+    height: 400px;
+  }
+}</style></head> 
+ <body> 
+  <div class="baling"></div> 
+  <div class="batang"></div> 
+  <button class="button">active</button> 
+ 
+<script type="text/javascript" id="dcoder_script">window.onload = function() {
+  const baling = document.querySelector(".baling");
+  const btn = document.querySelector(".button");
+  
+  btn.onclick = function() {
+    baling.classList.toggle("putar");
+    this.classList.toggle("active");
+  }
+  
+}</script></body></html>
